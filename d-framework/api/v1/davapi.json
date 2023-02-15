@@ -4,9 +4,9 @@
     "https"
   ],
   "host": "dav-api.github.io",
-  "basePath": "/leroapi/v1/receitas/1",
+  "basePath": "/leroapi/v1/receitas/",
   "info": {
-    "description": "\nAPIs da Web. Repositório de especificações de API no formato OpenAPI.\n\n**Warning**: Se você deseja ser notificado sobre as alterações com antecedência, junte-se ao nosso [YOUTUBE channel](https://www.youtube.com/@decomtvs).\n\n**Endpoint:** https://dav-api.github.io/leroapi/instagram-receitas.json\n",
+    "description": "\nAPIs da Web. Repositório de especificações de API no formato OpenAPI.\n\n**Warning**: Se você deseja ser notificado sobre as alterações com antecedência, junte-se ao nosso [YOUTUBE channel](https://www.youtube.com/@decomtvs).\n\n**Endpoint:** https://dav-api.github.io/leroapi/v1/receitas/1.json\n",
     "title": "DavApi",
     "version": "1.0",
     "x-apisguru-categories": [
@@ -18,7 +18,7 @@
     "x-origin": [
       {
         "format": "swagger",
-        "url": "https://dav-api.github.io/leroapi/leroapi/v1/receitas/1.json",
+        "url": "https://dav-api.github.io/leroapi/v1/receitas/1.json",
         "version": "2.0"
       }
     ],
@@ -26,7 +26,7 @@
     "x-serviceName": "APP.API.VIRTUAL"
   },
   "paths": {
-    "/instagram-receitas.json": {
+    "/1.json": {
       "get": {
         "parameters": [
           {
