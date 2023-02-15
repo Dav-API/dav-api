@@ -109,7 +109,6 @@
       }
     ];
 
-    // initially render first API  https://api.apis.guru/v2/specs/parliament.uk/search/Live/openapi.yaml
     Redoc.init(apis[0].url);
 
     function onClick() {
@@ -117,7 +116,6 @@
       Redoc.init(url);
     }
 
-    // dynamically building navigation items
     var $list = document.getElementById('links_container');
     apis.forEach(function (api) {
       var $listitem = document.createElement('li');
