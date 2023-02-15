@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerenciador DavApi</title>
+  <meta name="description" content="Gerenciador DavApi BY DAVIDSONBPE" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Gerenciador DavApi" />
+  <meta name="apple-mobile-web-app-title" content="Gerenciador DavApi" />
+  <meta name="theme-color" content="#2f3134" />
+  <meta name="msapplication-navbutton-color" content="#2f3134" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta content="d-framework/icon/icon/512/api.png" property="og:image" />
+  <meta content="d-framework/icon/icon/512/api.png" name="twitter:image" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./d-framework/icon/512/api.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="./d-framework/icon/512/api.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./d-framework/icon/192/api.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="./d-framework/icon/192/api.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="./d-framework/icon/144/api.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="./d-framework/icon/144/api.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="./d-framework/icon/96/api.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="./d-framework/icon/96/api.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="./d-framework/icon/72/api.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="./d-framework/icon/72/api.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./d-framework/icon/48/api.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="48x48" href="./d-framework/icon/48/api.png" />
+  <link rel="icon" type="image/png" sizes="36x36" href="./d-framework/icon/36/api.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="36x36" href="./d-framework/icon/36/api.png" />
+  <link rel="stylesheet" href="./d-framework/css/style.css">
+</head>
+
+<body>
+
+  <div class="tebouheader">
+    <div class="titulo">Gerenciador DavApi</div>
+  </div>
+  <!-- menu -->
+  <input type="radio" name="menu-state" id="hidden" checked>
+  <input type="radio" name="menu-state" id="visible">
+
+  <div class="rendermenu">
+    <label class="show-menu" for="visible"></label>
+  </div>
+  <!-- menu -->
+
+  <div style="padding-top: 65px;"></div>
+
+  <redoc scroll-y-offset="body > nav"></redoc>
+
+  <!-- menu -->
+  <label class="overlay" for="hidden"></label>
+  <div class="menu">
+    <label class="close-menu" for="hidden"></label>
+    <div class="coponet">
+      <div class="logotv">
+      </div>
+
+      <div class="coponets">
+
+        <div class="buttones buthover" id="Home"><a class="urlserv" href="" title="Home">
+            🏠 Home</a>
+        </div>
+
+        <div class="buttones" id="links_container">
+        </div>
+
+        <div class="buttones buthover" id="Developer" onClick="javascript:alert('DAV7 DEVELOPER ESTE APLICATIVO BY DAVIDSONBPE')">
+          <a class="urlserv" href="javascript:void(0);" title="Developer">📄 Developer</a>
+        </div>
+
+        <div class="buttones buthover" id="shareButton" onclick="share(this)">
+          <a class="urlserv" href="javascript:void(0);" title="Compartilhar">📄 Compartilhar</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- menu -->
+
+
+  <script src="./d-framework/js/redoc.min.js"> </script>
+  <script>
+    var apis = [
+      {
+        name: '📄 refugerestrooms',
+        url: 'http://192.168.0.100:8541/multiple-apis/d-framework/api/myapp.json'
+      },
+      {
+        name: '📄 InstagramStore',
+        url: 'https://api.apis.guru/v2/specs/who-hosts-this.com/0.0.1/swagger.yaml'
+      },
+      {
+        name: '📄 authentication',
+        url: 'https://api.apis.guru/v2/specs/passwordutility.net/v1/swagger.yaml'
+      },
+
+      {
+        name: '📄 APIs.guru',
+        url: 'https://api.apis.guru/v2/specs/whapi.com/numbers/2.0/swagger.yaml'
+      },
+
+      {
+        name: '📄 leroapi',
+        url: 'https://api.apis.guru/v2/specs/wheretocredit.com/1.0/openapi.yaml'
+      }
+    ];
+
+    // initially render first API  https://api.apis.guru/v2/specs/parliament.uk/search/Live/openapi.yaml
+    Redoc.init(apis[0].url);
+
+    function onClick() {
+      var url = this.getAttribute('data-link');
+      Redoc.init(url);
+    }
+
+    // dynamically building navigation items
+    var $list = document.getElementById('links_container');
+    apis.forEach(function (api) {
+      var $listitem = document.createElement('li');
+      $listitem.setAttribute('data-link', api.url);
+      $listitem.innerText = api.name;
+      $listitem.addEventListener('click', onClick);
+      $list.appendChild($listitem);
+    });
+
+    function share(button) {
+      if (navigator.share) {
+        var url = document.location.href;
+        var title = document.getElementsByTagName("title")[0].innerHTML;
+        var description = document
+          .querySelector("meta[name=description]")
+          .getAttribute("content");
+
+        navigator.share({
+          title: title,
+          text: description,
+          url: url
+        });
+      } else {
+        if (!clickedOnShare) {
+          clickedOnShare = true;
+          showLoading(button);
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

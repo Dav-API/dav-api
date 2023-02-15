@@ -1,0 +1,93 @@
+swagger: "2.0"
+schemes:
+  - https
+host: dav-api.github.io/leroapi
+basePath: /api
+
+info:
+  contact:
+    x-twitter: APP.API.VIRTUAL
+  description: |
+
+    APIs da Web. Repositório de especificações de API no formato OpenAPI.
+
+    **Warning**: Se você deseja ser notificado sobre as alterações com antecedência, junte-se ao nosso [YOUTUBE channel](https://www.youtube.com/@decomtvs).
+
+    **Endpoint:** https://dav-api.github.io/leroapi/instagram-receitas.json
+
+  title: APP API VIRTUAL
+  version: "1.0"
+  x-apisguru-categories:
+    - open_data
+  x-logo:
+    url: https://avatars.githubusercontent.com/u/119436086?s=500&v=4
+  x-origin:
+    - format: swagger
+      url: https://dav-api.github.io/leroapi/instagram-receitas.json
+      version: "2.0"
+  x-providerName: dav-api.github.io/leroapi
+  x-serviceName: APP.API.VIRTUAL
+paths:
+  /instagram-receitas.json:
+    get:
+      parameters:
+        - description: https://dav-api.github.io/leroapi/{{string}}.{{Esteção}}
+          format: script
+          in: query
+          name: APIs
+          required: true
+          type: integer
+        - description: instagram-receitas
+          format: url
+          in: query
+          name: string
+          required: true
+          type: integer
+        - description: .json
+          in: query
+          name: Esteção
+          required: true
+          type: suporte
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Especificações OpenAPI para cada API
+          schema:
+            $ref: "#/definitions/features"
+      summary: Visualizações para cada API
+definitions:
+  features:
+    properties:
+    example:
+      id: GY72k3NLXlP0da2m
+      title: receita hashtag
+      description: 6.6m Posts receitas hashtag
+      generator: https://dav-api.github.io/leroapi/
+      feedUrl: https://dav-api.github.io/leroapi/instagram-receitas.json
+      items:
+        0:
+          id: YNEKqE4BLaQIGtsv01
+          title: A SOBREMESA MAIS LEVE E FÁCIL PARA O SEU NATAL! GELADO DE ABACAXI! DERRETE NA BOCA!
+          description: Adquira meu Plano Anual de CURSOS ONLINE
+          url: https://www.youtube.com/watch?v=VCb02WhYwQ8
+          author: Isamara Amâncio
+          hostname: youtube.com
+          enclosure:
+            url: https://img.youtube.com/vi/VCb02WhYwQ8/mqdefault.jpg
+            type: image/jpeg
+
+          date: 2023-12-13T19:27:14.000Z
+
+        1:
+          id: LcsFShsoWhedSSU02
+          title: O QUINDÃO MAIS FÁCIL DO MUNDO PARA SUA CEIA DE NATAL! SÓ MEXER! CREMOSO! DELICIOSO
+          description: Adquira meu Plano Anual de CURSOS ONLINE...
+          url: https://www.youtube.com/watch?v=Sm2ZipBTcDE
+          author: Isamara Amâncio
+          hostname: youtube.com
+          enclosure:
+            url: https://img.youtube.com/vi/Sm2ZipBTcDE/mqdefault.jpg
+            type: image/jpeg
+
+          date: 2023-11-13T19:27:14.000Z

@@ -1,0 +1,240 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://dav-api.github.io/leroapi/"
+    }
+  ],
+  "info": {
+    "version": "v.2.0.2",
+    "title": "APP API VIRTUAL",
+    "description": "APIs da Web. Repositório de especificações de API no formato OpenAPI.\n**Warning**: Se você deseja ser notificado sobre as alterações com antecedência, junte-se ao nosso [YOUTUBE channel](https://www.youtube.com/@decomtvs).\n**Endpoint:** https://dav-api.github.io/leroapi/instagram-receitas.json\n",
+    "contact": {
+      "name": "APP API VIRTUAL",
+      "url": "https://dav-api.github.io/",
+      "email": "ruammc+myapi@live.com"
+    },
+    "license": {
+      "name": "DavApi CC0 1.0",
+      "url": "https://github.com/redek-dp"
+    },
+    "x-logo": {
+      "url": "https://avatars.githubusercontent.com/u/119436086?s=500&v=4"
+    }
+  },
+  "externalDocs": {
+    "url": "https://dav-api.github.io/leroapi/openapi.yaml"
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "APIs",
+      "description": "Solicitar API no formato JSON"
+    }
+  ],
+  "paths": {
+    "/instagram-receitas.json": {
+      "get": {
+        "operationId": "listAPIs",
+        "tags": [
+          "APIs"
+        ],
+        "summary": "Listar todas as APIs",
+        "description": "Liste todas as APIs no diretório.\nRetorna links para a especificação OpenAPI para cada API no diretório.\nSe a API existir em várias versões `preferred` uma será explicitamente marcada.\n\nAlgumas informações básicas da especificação OpenAPI são armazenadas em cache dentro de cada objeto.\nIsso permite gerar algumas visualizações simples sem a necessidade de buscar especificações OpenAPI para cada API.\n",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIs"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIs"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/instagram-receita.json": {
+      "get": {
+        "operationId": "getMetrics",
+        "summary": "Obter métricas básicas",
+        "description": "Algumas métricas básicas para todo o diretório.\nApenas números impressionantes para colocar na primeira página e destinam-se exclusivamente ao efeito WoW :)\n",
+        "tags": [
+          "APIs"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metrics"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metrics"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "APIs": {
+        "description": "Lista de detalhes da API.\nÉ um objeto JSON com IDs de API(`<provider>[:<service>]`) as keys.\n",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/API"
+        },
+        "minProperties": 1,
+        "example": {
+          "id": "GY72k3NLXlP0da2m",
+          "title": "receita hashtag",
+          "description": "6.6m Posts receitas hashtag",
+          "generator": "https://dav-api.github.io/leroapi/",
+          "feedUrl": "https://dav-api.github.io/leroapi/instagram-receitas.json",
+          "items": {
+            "0": {
+              "id": "YNEKqE4BLaQIGtsv01",
+              "title": "A SOBREMESA MAIS LEVE E FÁCIL PARA O SEU NATAL! GELADO DE ABACAXI! DERRETE NA BOCA!",
+              "description": "Adquira meu Plano Anual de CURSOS ONLINE",
+              "url": "https://www.youtube.com/watch?v=VCb02WhYwQ8",
+              "author": "Isamara Amâncio",
+              "hostname": "youtube.com",
+              "enclosure": {
+                "url": "https://img.youtube.com/vi/VCb02WhYwQ8/mqdefault.jpg",
+                "type": "image/jpeg"
+              },
+              "date": "2023-12-13T19:27:14.000Z"
+            },
+            "1": {
+              "id": "LcsFShsoWhedSSU02",
+              "title": "O QUINDÃO MAIS FÁCIL DO MUNDO PARA SUA CEIA DE NATAL! SÓ MEXER! CREMOSO! DELICIOSO",
+              "description": "Adquira meu Plano Anual de CURSOS ONLINE...",
+              "url": "https://www.youtube.com/watch?v=Sm2ZipBTcDE",
+              "author": "Isamara Amâncio",
+              "hostname": "youtube.com",
+              "enclosure": {
+                "url": "https://img.youtube.com/vi/Sm2ZipBTcDE/mqdefault.jpg",
+                "type": "image/jpeg"
+              },
+              "date": "2023-11-13T19:27:14.000Z"
+            }
+          }
+        }
+      },
+      "API": {
+        "description": "Metainformações sobre a API",
+        "type": "object",
+        "required": [
+          "added",
+          "preferred",
+          "versions"
+        ],
+        "properties": {
+          "added": {
+            "description": "Carimbo de data/hora quando a API foi adicionada pela primeira vez ao diretório",
+            "type": "string",
+            "format": "date-time"
+          },
+          "preferred": {
+            "description": "Recommended version",
+            "type": "string"
+          },
+          "versions": {
+            "description": "List of supported versions of the API",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ApiVersion"
+            },
+            "minProperties": 1
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiVersion": {
+        "type": "object",
+        "required": [
+          "added",
+          "updated",
+          "swaggerUrl",
+          "swaggerYamlUrl",
+          "info"
+        ],
+        "additionalProperties": false
+      },
+      "Metrics": {
+        "description": "Lista de métricas básicas",
+        "type": "object",
+        "required": [
+          "numSpecs",
+          "numAPIs",
+          "numEndpoints"
+        ],
+        "properties": {
+          "numSpecs": {
+            "description": "Número de especificações de API, incluindo diferentes versões da mesma API",
+            "type": "integer",
+            "minimum": 1
+          },
+          "numAPIs": {
+            "description": "Número de APIs",
+            "type": "integer",
+            "minimum": 1
+          },
+          "numEndpoints": {
+            "description": "Número total de endpoints dentro de todas as especificações",
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "additionalProperties": false,
+        "example": {
+          "id": "GY72k3NLXlP0da2m",
+          "title": "receita hashtag",
+          "description": "6.6m Posts receitas hashtag",
+          "generator": "https://dav-api.github.io/leroapi/",
+          "feedUrl": "https://dav-api.github.io/leroapi/instagram-receitas.json",
+          "items": {
+            "0": {
+              "id": "YNEKqE4BLaQIGtsv01",
+              "title": "A SOBREMESA MAIS LEVE E FÁCIL PARA O SEU NATAL! GELADO DE ABACAXI! DERRETE NA BOCA!",
+              "description": "Adquira meu Plano Anual de CURSOS ONLINE",
+              "url": "https://www.youtube.com/watch?v=VCb02WhYwQ8",
+              "author": "Isamara Amâncio",
+              "hostname": "youtube.com",
+              "enclosure": {
+                "url": "https://img.youtube.com/vi/VCb02WhYwQ8/mqdefault.jpg",
+                "type": "image/jpeg"
+              },
+              "date": "2023-12-13T19:27:14.000Z"
+            },
+            "1": {
+              "id": "LcsFShsoWhedSSU02",
+              "title": "O QUINDÃO MAIS FÁCIL DO MUNDO PARA SUA CEIA DE NATAL! SÓ MEXER! CREMOSO! DELICIOSO",
+              "description": "Adquira meu Plano Anual de CURSOS ONLINE...",
+              "url": "https://www.youtube.com/watch?v=Sm2ZipBTcDE",
+              "author": "Isamara Amâncio",
+              "hostname": "youtube.com",
+              "enclosure": {
+                "url": "https://img.youtube.com/vi/Sm2ZipBTcDE/mqdefault.jpg",
+                "type": "image/jpeg"
+              },
+              "date": "2023-11-13T19:27:14.000Z"
+            }
+          }
+        }
+      }
+    }
+  }
+}
