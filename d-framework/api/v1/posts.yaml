@@ -73,9 +73,9 @@ info:
     </html>
     ```
 servers:
-  - url: https://jsonplaceholder.typicode.com/posts
+  - url: https://jsonplaceholder.typicode.com
 paths:
-  /users:
+  /posts:
     get:
       description: Lista de usuários (paginada)
       parameters:
