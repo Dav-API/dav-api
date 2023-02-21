@@ -119,37 +119,40 @@ definitions:
   features: 
     example:
         0:
-          id: GY72k3NLXlP0da2m
-          title: receita hashtag
-          description: 6.6m Posts receitas hashtag
-          generator: https://dav-api.github.io/leroapi/
-          feedUrl: https://dav-api.github.io/leroapi/instagram-receitas.json
+          id: 1
+          title: Sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+          description: quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto
+          url: https://www.gravatar.com/avatar/?d=identicon&s=80&g=
       
         1:
-          id: YNEKqE4BLaQIGtsv01
-          title: A SOBREMESA MAIS LEVE E FÁCIL PARA O SEU NATAL! GELADO DE ABACAXI! DERRETE NA BOCA!
-          description: Adquira meu Plano Anual de CURSOS ONLINE
-          url: https://www.youtube.com/watch?v=VCb02WhYwQ8
-          author: Isamara Amâncio
-          hostname: youtube.com
-          enclosure:
-            url: https://img.youtube.com/vi/VCb02WhYwQ8/mqdefault.jpg
-            type: image/jpeg
-
-          date: 2023-12-13T19:27:14.000Z
+          id: 2
+          title: A qui est esse!
+          description: est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla
+          url: https://www.gravatar.com/avatar/?d=identicon&s=80&g=
 
         2:
-          id: LcsFShsoWhedSSU02
-          title: O QUINDÃO MAIS FÁCIL DO MUNDO PARA SUA CEIA DE NATAL! SÓ MEXER! CREMOSO! DELICIOSO
-          description: Adquira meu Plano Anual de CURSOS ONLINE...
-          url: https://www.youtube.com/watch?v=Sm2ZipBTcDE
-          author: Isamara Amâncio
-          hostname: youtube.com
-          enclosure:
-            url: https://img.youtube.com/vi/Sm2ZipBTcDE/mqdefault.jpg
-            type: image/jpeg
+          id: 3
+          title: Ea molestias quasi exercitationem repellat qui ipsa sit aut
+          description: et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit
+          url: https://www.gravatar.com/avatar/?d=identicon&s=80&g=
 
-          date: 2023-11-13T19:27:14.000Z
+        3:
+          id: 4
+          title: Eum et est occaecati
+          description: ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit
+          url: https://www.gravatar.com/avatar/?d=identicon&s=80&g=
+
+        4:
+          id: 5
+          title: Nesciunt quas odio
+          description: repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque
+          url: https://www.gravatar.com/avatar/?d=identicon&s=80&g=
+
+        5:
+          id: 6
+          title: Dolorem eum magni eos aperiam quia
+          description: ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae
+          url: https://www.gravatar.com/avatar/?d=identicon&s=80&g=
 
 externalDocs:
   description: objeto JSON com IDs de API
